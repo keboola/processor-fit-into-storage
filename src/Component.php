@@ -44,7 +44,7 @@ class Component extends BaseComponent
         $config = $this->getConfig();
         $chunkSize = $config->getChunkSize();
         $csvFile = new CsvWriter($destinationFileName);
-        $csvFile->writeRow(['contents', 'id']);
+        $csvFile->writeRow(['contents', 'file', 'index']);
         ChunkedWriter::processFile($inFile->getPathname(), $csvFile, $chunkSize, $inFile->getFilename());
     }
 

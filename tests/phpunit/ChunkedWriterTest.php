@@ -22,7 +22,7 @@ class ChunkedWriterTest extends TestCase
         ChunkedWriter::processFile($source, $writer, 2, 'id');
         $data = file_get_contents($target);
         self::assertEquals(
-            implode("\n", ['"ab","id"', '"cd","id"', '']),
+            implode("\n", ['"ab","id","0"', '"cd","id","1"', '']),
             $data
         );
     }
@@ -40,8 +40,8 @@ class ChunkedWriterTest extends TestCase
         self::assertEquals(
             implode(
                 "\n",
-                ['"šý","id"', '"žč","id"', '"ěš","id"', '"ýž","id"', '"čě","id"', '"šý","id"', '"žč","id"', '"ě","id"',
-                    '']
+                ['"šý","id","0"' , '"žč","id","1"', '"ěš","id","2"', '"ýž","id","3"', '"čě","id","4"',
+                    '"šý","id","5"', '"žč","id","6"', '"ě","id","7"', '']
             ),
             $data
         );

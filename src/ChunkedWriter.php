@@ -15,16 +15,17 @@ class ChunkedWriter
             throw new \Exception(sprintf('Cannot open source file "%s".', $sourcePath));
         }
         $buf = '';
+        $index = 0;
         while (!feof($fh)) {
             $buf .= fread($fh, $chunkSize * 4);
             while (mb_strlen($buf) >= $chunkSize) {
                 $slice = mb_substr($buf, 0, $chunkSize);
-                $writer->writeRow([$slice, $id]);
+                $writer->writeRow([$slice, $id, $index++]);
                 $buf = mb_substr($buf, $chunkSize);
             }
         }
         if ($buf) {
-            $writer->writeRow([$buf, $id]);
+            $writer->writeRow([$buf, $id, $index]);
         }
     }
 }

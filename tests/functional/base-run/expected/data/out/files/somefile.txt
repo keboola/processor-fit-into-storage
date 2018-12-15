@@ -1,2 +1,2 @@
-"contents","id"
-"Eric the Half-a-Bee","somefile.txt"
+"contents","file","index"
+"Eric the Half-a-Bee","somefile.txt","0"
