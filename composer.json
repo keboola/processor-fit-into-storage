@@ -15,13 +15,13 @@
     },
     "autoload": {
         "psr-4": {
-            "MyComponent\\": "src/"
+            "Keboola\\ProcessorCsvWrap\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MyComponent\\Tests\\": "tests/phpunit/",
-            "MyComponent\\FunctionalTests\\": "tests/functional/"
+            "Keboola\\ProcessorCsvWrap\\Tests\\": "tests/phpunit/",
+            "Keboola\\ProcessorCsvWrap\\FunctionalTests\\": "tests/functional/"
         }
     },
     "scripts": {

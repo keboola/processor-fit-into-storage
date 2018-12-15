@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MyComponent;
+namespace Keboola\ProcessorCsvWrap;
 
 use Keboola\Component\BaseComponent;
 use Keboola\Csv\CsvWriter;
@@ -40,9 +40,12 @@ class Component extends BaseComponent
 
     private function processFile(SplFileInfo $inFile, string $destinationFileName) : void
     {
+        /** @var Config $config */
+        $config = $this->getConfig();
+        $chunkSize = $config->getChunkSize();
         $csvFile = new CsvWriter($destinationFileName);
-        $csvFile->writeRow(['file']);
-        $csvFile->writeRow([(string) file_get_contents($inFile->getPathname())]);
+        $csvFile->writeRow(['contents', 'id']);
+        ChunkedWriter::processFile($inFile->getPathname(), $csvFile, $chunkSize, $inFile->getFilename());
     }
 
     protected function getConfigClass(): string

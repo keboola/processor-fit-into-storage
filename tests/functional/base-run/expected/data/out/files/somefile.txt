@@ -1,2 +1,2 @@
-"file"
-"Eric the Half-a-Bee"
+"contents","id"
+"Eric the Half-a-Bee","somefile.txt"
