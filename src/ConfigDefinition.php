@@ -16,7 +16,7 @@ class ConfigDefinition extends BaseConfigDefinition
         /** @noinspection NullPointerExceptionInspection */
         $parametersNode
             ->children()
-                ->integerNode('chunk_size')->defaultValue(16000000)->end()
+                ->integerNode('chunk_size')->defaultValue(60000)->min(1)->end()
             ->end()
         ;
         // @formatter:on
