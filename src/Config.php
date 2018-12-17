@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-namespace MyComponent;
+namespace Keboola\ProcessorCsvWrap;
 
 use Keboola\Component\Config\BaseConfig;
 
 class Config extends BaseConfig
 {
-    // @todo implement your custom getters
-    public function getFoo() : string
+    public function getChunkSize(): int
     {
-        return $this->getValue(['parameters', 'foo']);
+        return (int) $this->getValue(['parameters', 'chunk_size']);
     }
 }
