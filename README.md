@@ -21,14 +21,15 @@ Example configuration:
         "component": "keboola.processor-fit-into-storage"
     },
     "parameters": {
-        "chunk_size": "900000"
+        "chunk_size": 900000
     }
 }
 ```
 
 Each file is completely read and wrapped into a CSV so that it becomes a single table cell. Because the
 maximum cell size is usually limited (depending on where the file is imported afterwards), chunking is 
-used to split larger files into cells. To be able to reconstruct each file, the columns `file` and `index` are added
+used to split larger files into cells. KBC Storage cell size is described in the [docs](https://help.keboola.com/storage/#storage-data)
+To be able to reconstruct each file, the columns `file` and `index` are added
 to the CSV. For example when processing the file `greeting.txt`:
 
     Hi there
