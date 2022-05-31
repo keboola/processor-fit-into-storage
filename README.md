@@ -75,3 +75,7 @@ For information about deployment and integration with KBC, please refer to the [
 ## License
 
 MIT licensed, see [LICENSE](./LICENSE) file.
+
+## License
+
+MIT licensed, see [LICENSE](./LICENSE) file.
